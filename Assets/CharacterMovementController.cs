@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isAccelerating = false;
 
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
