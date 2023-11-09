@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 148643294}
   - component: {fileID: 148643293}
   - component: {fileID: 148643292}
+  - component: {fileID: 148643295}
   m_Layer: 5
   m_Name: UpButton
   m_TagString: Untagged
@@ -244,6 +245,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148643290}
   m_CullTransparentMesh: 1
+--- !u!114 &148643295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148643290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e58a39463a1de45add173a90d2b207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonStateOutputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1760323927}
+        m_TargetAssemblyTypeName: PlaneController, Assembly-CSharp
+        m_MethodName: OnUpButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &325223983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1061,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cbcd22427a8b71c4ca5596cddf0eab01, type: 2}
+  - {fileID: 2100000, guid: 5dd480b2b6c5801408f87f2072c8de27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1090,6 +1118,7 @@ GameObject:
   - component: {fileID: 1717699253}
   - component: {fileID: 1717699252}
   - component: {fileID: 1717699251}
+  - component: {fileID: 1717699254}
   m_Layer: 5
   m_Name: DownButton
   m_TagString: Untagged
@@ -1199,6 +1228,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717699249}
   m_CullTransparentMesh: 1
+--- !u!114 &1717699254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717699249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e58a39463a1de45add173a90d2b207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonStateOutputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1760323927}
+        m_TargetAssemblyTypeName: PlaneController, Assembly-CSharp
+        m_MethodName: OnDownButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1760323926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 94752ecaf348a44f58849c0dbb76fed3,
@@ -1223,6 +1279,7 @@ MonoBehaviour:
   propella: {fileID: 2000725894}
   upButton: {fileID: 148643292}
   downButton: {fileID: 1717699251}
+  correctionSpeed: 2
 --- !u!54 &1760323928
 Rigidbody:
   m_ObjectHideFlags: 0
