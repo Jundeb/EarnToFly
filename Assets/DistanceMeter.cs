@@ -7,7 +7,7 @@ using UnityEngine.UI; // Import the UI namespace
 public class DistanceMeter : MonoBehaviour
 {
     private Vector3 lastPosition;
-    private float totalDistance = 0.0f;
+    internal float totalDistance = 0.0f;
     public Text distanceText; // Reference to the Text component
 
     // Start is called before the first frame update

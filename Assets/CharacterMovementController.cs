@@ -46,6 +46,5 @@ public class PlayerMovement : MonoBehaviour
             cameraMovement.transform.position = cameraPosition;
         }
 
-        Debug.Log(velocity);
     }
 }
