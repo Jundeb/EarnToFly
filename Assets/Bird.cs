@@ -7,6 +7,8 @@ public class Bird : Enemy
 {
     public MoneyCollection moneyCollection;
     public PlayerHealth playerHealth;
+    public Color color1 = Color.blue;
+    public Color color2 = Color.red;
     public override void TakeDamage(float amount)
     {
         health -= amount;
@@ -45,5 +47,23 @@ public class Bird : Enemy
         }
     }
 
+    public override void SetColor(Color color)
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            renderer.material.color = color;
+        }
+        else
+        {
+            Debug.LogError("Renderer component not found");
+        }
+    }
+
     
+
+    public void Start()
+    {
+        SetColor(color1);
+    }
 }

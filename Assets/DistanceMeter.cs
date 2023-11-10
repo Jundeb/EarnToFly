@@ -25,5 +25,6 @@ public class DistanceMeter : MonoBehaviour
 
         // Set the text of the Text component to the total distance rounded off to two decimal places
         distanceText.text = "Distance: " + Math.Round(totalDistance, 0).ToString() + " units";
+  
     }
 }
