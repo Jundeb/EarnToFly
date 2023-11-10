@@ -5,9 +5,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {    
     public float projectile_death_time = 2;
- 
+    public Transform TF;
     void Awake()
     {
+        TF = GetComponent<Transform>();
         Destroy(gameObject, projectile_death_time);
     }
  

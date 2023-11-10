@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 64376775}
   - component: {fileID: 64376774}
   - component: {fileID: 64376773}
-  - component: {fileID: 64376772}
+  - component: {fileID: 64376776}
   m_Layer: 5
   m_Name: ShootButton
   m_TagString: Untagged
@@ -163,33 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 288.5, y: 49.9}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &64376772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64376770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e58a39463a1de45add173a90d2b207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonStateOutputEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 82226aa9d82c16141bfc5a32b04ff0c1, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &64376773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +245,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64376770}
   m_CullTransparentMesh: 1
+--- !u!114 &64376776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64376770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563e600ed2502ed4bad06310cfc37e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &86615920
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +274,7 @@ GameObject:
   - component: {fileID: 86615927}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: biplane_tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,6 +426,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7809431410542000645, guid: ff38fa1de3e74904cb894a30c51bd14a,
     type: 3}
   projectilespeed: 6
+  ShootButton: {fileID: 64376776}
+  cooldownDuration: 2
 --- !u!1 &148643290
 GameObject:
   m_ObjectHideFlags: 0
