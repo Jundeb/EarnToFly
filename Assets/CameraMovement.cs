@@ -14,8 +14,8 @@ public class CameraMovement : MonoBehaviour
         return width;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right * scrollSpeed * Time.fixedDeltaTime);
     }
 }
