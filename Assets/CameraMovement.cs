@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    
     public float scrollSpeed = 5.0f;
+    
+
+
 
     internal float GetCameraViewWidth()
     {
@@ -13,6 +17,16 @@ public class CameraMovement : MonoBehaviour
         float width = height * Camera.main.aspect;
         return width;
     }
+
+    public float GetCameraViewHeight()
+    {
+            Camera mainCamera = GetComponent<Camera>();
+            
+            Vector3 cameraPosition = Camera.main.ScreenToViewportPoint (new Vector3 (0, Camera.main.pixelHeight, 0));
+            return cameraPosition.y;
+    }
+
+
 
     private void FixedUpdate()
     {

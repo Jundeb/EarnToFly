@@ -45,6 +45,10 @@ public class Bird : Enemy
             InflictContactDamage(contactDamage);
             TakeDamage(1);
         }
+        else if (collision.gameObject.CompareTag("Projectile"))
+        {
+            // weapon damage
+        }
     }
 
     public override void SetColor(Color color)
