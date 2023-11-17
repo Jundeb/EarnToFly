@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
         float cameraViewWidth = cameraMovement.GetCameraViewWidth();
         Vector3 cameraPosition = Camera.main.transform.position;
         
-        Vector3 spawnerPosition = new Vector3(cameraPosition.x + 28 + cameraViewWidth / 2 * Time.deltaTime, transform.position.y, transform.position.z);
+        Vector3 spawnerPosition = new Vector3(cameraPosition.x + 28 + cameraViewWidth / 2 * Time.deltaTime, cameraPosition.y - 10, transform.position.z);
         transform.position = spawnerPosition;
 
     }
