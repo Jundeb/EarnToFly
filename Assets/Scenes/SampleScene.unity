@@ -423,15 +423,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectilesSpawn: {fileID: 1379886021}
-  projectilePrefab: {fileID: 7809431410542000645, guid: ff38fa1de3e74904cb894a30c51bd14a,
+  projectilePrefab1: {fileID: 7809431410542000645, guid: ff38fa1de3e74904cb894a30c51bd14a,
+    type: 3}
+  projectilePrefab2: {fileID: 7809431410542000645, guid: 555e54cb32b06cd40b3db5e3194cc6d3,
     type: 3}
   ShootButton: {fileID: 64376776}
   projectileScale: {x: 1, y: 1, z: 1}
   ammo_max: 10
   ammo_amount: 10
   reload_speed: 2
-  projectile_speed: 18
   fire_rate: 0.5
+  projectile_speed: 700
 --- !u!1 &148643290
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8144722766153600432}
   - component: {fileID: 2391300545376241467}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43d2a6ab3b67fc43b26e68c1eae26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile_death_time: 3
+  projectile_death_time: 10
