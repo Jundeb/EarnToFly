@@ -73,7 +73,7 @@ public class PlaneController : MonoBehaviour
         }
 
         throttle = Mathf.Clamp(throttle, 30f, 100f);
-        
+
     }
 
     // Update is called once per frame
@@ -95,7 +95,7 @@ public class PlaneController : MonoBehaviour
 
         pitch = Mathf.Lerp(pitch, targetPitch, 0.1f); // Adjust the smoothing factor
         rb.AddTorque(-transform.forward * pitch * responseModifier);
-        
+
         //Stabilaizer
         if (!pitchControlUpButton.ButtonState() && !pitchControlDownButton.ButtonState())
         {
