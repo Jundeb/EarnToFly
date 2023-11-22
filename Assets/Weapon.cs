@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform ProjectilesSpawn;
     public GameObject projectilePrefab1;
     public GameObject projectilePrefab2;
+    public GameObject projectilePrefab3;
     public PlayerInputButton ShootButton;
     public Vector3 projectileScale;
     //Projectile scale
@@ -23,27 +25,44 @@ public class Weapon : MonoBehaviour
     //Projectile fire rate after which you can shoot again, the lower it is the faster you can shoot
     public const float projectile_Damage = 0.0f;
     // damage of the weapons projectiles
-    public float projectile_speed = 700f;
+    public float projectile_speed = 1000f;
     //Projectile speed aka bullet speed
 
     private float lastShotTime = -100.0f;
     // time of the last shot
     private float lastReloadTime = 0.0f;
     // time of the last reload
-    private GameObject ProjectileInUse;
+    private GameObject[] ProjectilesInUse;
     //The current projectiles used by the weapon
+    private Vector3 ProjectilesForce;
+    private float RandomAccuracy;
+    private int currentProjectileIndex = 0;
+    private Vector3[] projectileScales = {
+        new Vector3(0.3f, 0.3f, 0.3f),
+        new Vector3(0.5f, 0.5f, 0.5f),
+        new Vector3(0.2f, 0.2f, 0.4f)
+    };
+
+    private float[] projectileForces;
 
     void Start()
     {
         // this will be used in final build to ensure that the settings for the weapon are right when the game starts
-        ProjectileInUse = projectilePrefab1;
-        projectileScale = new Vector3(0.2f,0.2f,0.2f);
+        ProjectilesInUse = new GameObject[] { projectilePrefab1, projectilePrefab2, projectilePrefab3 };
+
+        projectileForces = new float[] {
+            projectile_speed * 1.25f,
+            projectile_speed * 1f,
+            projectile_speed * 1.5f
+        };
+
+        ChangeProjectile(currentProjectileIndex);
     }
     void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            ChangeProjectile();
+            ChangeToNextProjectile();
         }
         // cooldown duration has passed since last reload
         if(ammo_amount<ammo_max && Time.time - lastReloadTime >= reload_speed)
@@ -61,28 +80,41 @@ public class Weapon : MonoBehaviour
         
         print(Time.time);
     }
-    void ChangeProjectile()
+    void ChangeProjectile(int newIndex)
     {
-        if(ProjectileInUse == projectilePrefab1) {
-            ProjectileInUse = projectilePrefab2;
-            projectileScale = new Vector3(0.5f,0.5f,0.5f);
-        } 
-        else if(ProjectileInUse == projectilePrefab2) {
-            ProjectileInUse = projectilePrefab1;
-            projectileScale = new Vector3(0.2f,0.2f,0.2f);
+        if (newIndex >= 0 && newIndex < ProjectilesInUse.Length)
+        {
+            ProjectilesInUse[currentProjectileIndex].SetActive(false); // Deactivate the current projectile
+
+            currentProjectileIndex = newIndex; // Update the current index
+
+            ProjectilesInUse[currentProjectileIndex].SetActive(true); // Activate the new projectile
+            projectileScale = projectileScales[currentProjectileIndex]; // Set the scale
+            ProjectilesForce = new Vector3(0, 0, projectileForces[currentProjectileIndex]); // Set the force
+            Debug.Log("Projectile " + (currentProjectileIndex + 1) + " in use");
         }
+    }
+    void ChangeToNextProjectile()
+    {
+        int newIndex = (currentProjectileIndex + 1) % ProjectilesInUse.Length; // Move to the next index cyclically
+        ChangeProjectile(newIndex);
     }
     void ShootProjectile()
     {
         ammo_amount = ammo_amount - 1;
         //creates the projectile and sets its direction
-        GameObject projectile = Instantiate(ProjectileInUse, ProjectilesSpawn.position, ProjectilesSpawn.rotation);
+        GameObject projectile = Instantiate(ProjectilesInUse[currentProjectileIndex], ProjectilesSpawn.position, ProjectilesSpawn.rotation);
         //Sets Rigid body for projectile
         Rigidbody projectileRigidBody = projectile.GetComponent<Rigidbody>();
         //changes projectile scale
         projectile.gameObject.transform.localScale = projectileScale;
+        if(currentProjectileIndex==2)
+        {
+            RandomAccuracy = Random.Range(-150, 150);
+            ProjectilesForce = new Vector3(RandomAccuracy, 0, projectileForces[currentProjectileIndex]); // Set the force
+        }
         //sets the projectile to move
-        projectileRigidBody.AddRelativeForce(new Vector3(0, 0, projectile_speed));
+        projectileRigidBody.AddRelativeForce(ProjectilesForce);
 
         //Old projectile
         //sets the speed of the projectile

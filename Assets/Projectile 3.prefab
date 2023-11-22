@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 8144722766153600432}
   - component: {fileID: 2391300545376241467}
   m_Layer: 0
-  m_Name: Projectile 2
+  m_Name: Projectile 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6118801698533443926
 Transform:
   m_ObjectHideFlags: 0
