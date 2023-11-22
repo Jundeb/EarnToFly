@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isAccelerating = false;
 
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -45,5 +47,6 @@ public class PlayerMovement : MonoBehaviour
             cameraPosition.x = Mathf.Lerp(cameraPosition.x, transform.position.x + 5f, Time.deltaTime * 3f); // add 5f to the x position of the character
             cameraMovement.transform.position = cameraPosition;
         }
+
     }
 }
