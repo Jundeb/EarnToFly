@@ -13,6 +13,21 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    public float GetCameraViewHeight()
+    {
+            Camera mainCamera = GetComponent<Camera>();
+
+            Vector3 cameraPosition = Camera.main.ScreenToViewportPoint (new Vector3 (0, Camera.main.pixelHeight, 0));
+            return cameraPosition.y;
+    }
+
+    internal float GetCameraViewWidth()
+    {
+        float height = 2f * Camera.main.orthographicSize;
+        float width = height * Camera.main.aspect;
+        return width;
+    }
+
     private void FixedUpdate()
     {
         // Smoothly interpolate the camera's Y position toward the target's Y position with damping
