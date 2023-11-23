@@ -81,12 +81,11 @@ public class PlaneControlV2 : MonoBehaviour
         //rb.AddTorque(-transform.forward * targetPitch * pitchAmount);
 
 
-        if (!throttleButton.ButtonState())
-        {
-            Vector3 cameraPosition = cameraMovement.transform.position;
-            cameraPosition.x = Mathf.Lerp(cameraPosition.x, transform.position.x + 5f, Time.fixedDeltaTime);
-            cameraMovement.transform.position = cameraPosition;
-        }
+
+        Vector3 cameraPosition = cameraMovement.transform.position;
+        cameraPosition.x = Mathf.Lerp(cameraPosition.x, transform.position.x + 5f, Time.fixedDeltaTime);
+        cameraMovement.transform.position = cameraPosition;
+
 
         //Stabilaizer
         //if (!pitchControlUpButton.ButtonState() && !pitchControlDownButton.ButtonState())
