@@ -10,6 +10,7 @@ public class Bird : Enemy
     public MoneyCollection moneyCollection;
     public PlayerHealth playerHealth;
     public PlaneControlV2 planeControlV2;
+    public Weapon weapon;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
     public bool IsThisABird;
@@ -67,7 +68,7 @@ public class Bird : Enemy
         }
         else if (collision.gameObject.CompareTag("Projectile"))
         {
-            // weapon damage
+            TakeDamage(weapon.projectile_Damage);
         }
     }
 

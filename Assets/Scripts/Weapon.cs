@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     //Reload speed at which ammo come back after shooting
     public float fire_rate = 2.0f;
     //Projectile fire rate after which you can shoot again, the lower it is the faster you can shoot
-    public const float projectile_Damage = 0.0f;
+    public float projectile_Damage = 0.0f;
     // damage of the weapons projectiles
     public float projectile_speed = 1000f;
     //Projectile speed aka bullet speed

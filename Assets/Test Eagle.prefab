@@ -124,9 +124,13 @@ MonoBehaviour:
   movementSpeed: 0
   contactDamage: 10
   loot: 10
-  moneyCollection: {fileID: 0}
-  playerHealth: {fileID: 0}
-  planeControlV2: {fileID: 0}
+  moneyCollection: {fileID: 712123296544888177, guid: fb259d44121719a4396c1dee107b7471,
+    type: 3}
+  playerHealth: {fileID: 1897835013817308613, guid: fb259d44121719a4396c1dee107b7471,
+    type: 3}
+  planeControlV2: {fileID: 8013132399629869192, guid: fb259d44121719a4396c1dee107b7471,
+    type: 3}
+  weapon: {fileID: 0}
   color1: {r: 0, g: 0, b: 1, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 1}
   IsThisABird: 0

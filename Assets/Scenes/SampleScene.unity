@@ -2142,6 +2142,11 @@ PrefabInstance:
       propertyPath: ShootButton
       value: 
       objectReference: {fileID: 64376776}
+    - target: {fileID: 7983308083646527511, guid: 071a13b9107a61541911e9e5f79add0c,
+        type: 3}
+      propertyPath: projectile_Damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8230986578302672772, guid: 071a13b9107a61541911e9e5f79add0c,
         type: 3}
       propertyPath: m_Enabled
