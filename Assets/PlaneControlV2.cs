@@ -9,7 +9,9 @@ public class PlaneControlV2 : MonoBehaviour
     public float maxSpeed = 50f;
     public float flySpeedIncrement;
 
-    public float pitchAmount = 10.0f;
+    public float pitch = 0;
+    public float rotationSmoothing = 1.0f;
+    public float pitchAmount = 1.0f;
     public float correctionSpeed = 1.0f;
 
     private float targetPitch;
@@ -64,14 +66,22 @@ public class PlaneControlV2 : MonoBehaviour
         HandleInputs();
 
         propella.Rotate(Vector3.right * flySpeed * 5);
+
+
+        // Rotate the cube by converting the angles into a quaternion.
+        Quaternion target = Quaternion.Euler(0f, 0f, -targetPitch * 90);
+
+        // Dampen towards the target rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * rotationSmoothing);
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(transform.right * flySpeed);
+        rb.AddRelativeForce(Vector3.right * flySpeed);
 
-        targetPitch = Mathf.Lerp(targetPitch, targetPitch, 0.1f); // Adjust the smoothing factor
-        rb.AddTorque(-transform.forward * targetPitch * pitchAmount);
+        //Debug.Log(transform.eulerAngles.z);
+        //rb.AddTorque(-transform.forward * targetPitch * pitchAmount);
+
 
         if (!throttleButton.ButtonState())
         {
@@ -81,9 +91,9 @@ public class PlaneControlV2 : MonoBehaviour
         }
 
         //Stabilaizer
-        if (!pitchControlUpButton.ButtonState() && !pitchControlDownButton.ButtonState())
-        {
-            rb.AddTorque(-transform.forward * transform.rotation.z * correctionSpeed);
-        }
+        //if (!pitchControlUpButton.ButtonState() && !pitchControlDownButton.ButtonState())
+        //{
+        //    rb.AddTorque(-transform.forward * transform.rotation.z * correctionSpeed);
+        //}
     }
 }
