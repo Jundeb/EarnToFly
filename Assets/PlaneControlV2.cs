@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlaneControlV2 : MonoBehaviour
 {
@@ -66,18 +65,17 @@ public class PlaneControlV2 : MonoBehaviour
         HandleInputs();
 
         propella.Rotate(Vector3.right * flySpeed * 5);
-
-
-        // Rotate the cube by converting the angles into a quaternion.
-        Quaternion target = Quaternion.Euler(0f, 0f, -targetPitch * 90);
-
-        // Dampen towards the target rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * rotationSmoothing);
     }
 
     private void FixedUpdate()
     {
         rb.AddRelativeForce(Vector3.right * flySpeed);
+
+                // Rotate the cube by converting the angles into a quaternion.
+        Quaternion target = Quaternion.Euler(0f, 0f, -targetPitch * 90);
+
+        // Dampen towards the target rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.fixedDeltaTime * rotationSmoothing);
 
         //Debug.Log(transform.eulerAngles.z);
         //rb.AddTorque(-transform.forward * targetPitch * pitchAmount);
