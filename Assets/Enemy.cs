@@ -13,9 +13,7 @@ public abstract class Enemy : MonoBehaviour
     public float contactDamage;
     public int loot;
 
-    public void Attack() {
-
-    }
+    public abstract void Attack();
     public abstract void DropLoot();
     public abstract void Die();
     public abstract void InflictContactDamage(float amount);

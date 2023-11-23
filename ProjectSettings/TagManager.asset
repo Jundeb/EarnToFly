@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - biplane_tag
+  - Eagle
+  - Bird
   layers:
   - Default
   - TransparentFX
