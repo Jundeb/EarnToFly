@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     //Reload speed at which ammo come back after shooting
     public float fire_rate = 2.0f;
     //Projectile fire rate after which you can shoot again, the lower it is the faster you can shoot
-    public float projectile_Damage = 0.0f;
+    public float projectile_Damage = 1;
     // damage of the weapons projectiles
     public float projectile_speed = 1000f;
     //Projectile speed aka bullet speed
@@ -91,7 +91,7 @@ public class Weapon : MonoBehaviour
             ProjectilesInUse[currentProjectileIndex].SetActive(true); // Activate the new projectile
             projectileScale = projectileScales[currentProjectileIndex]; // Set the scale
             ProjectilesForce = new Vector3(0, 0, projectileForces[currentProjectileIndex]); // Set the force
-            Debug.Log("Projectile " + (currentProjectileIndex + 1) + " in use");
+            // Debug.Log("Projectile " + (currentProjectileIndex + 1) + " in use");
         }
     }
     void ChangeToNextProjectile()

@@ -66,7 +66,7 @@ public class Bird : Enemy
             InflictContactDamage(contactDamage);
             TakeDamage(1);
         }
-        else if (collision.gameObject.CompareTag("Projectile"))
+        if (collision.gameObject.CompareTag("Projectile"))
         {
             TakeDamage(weapon.projectile_Damage);
         }
