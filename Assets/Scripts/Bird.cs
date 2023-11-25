@@ -7,10 +7,11 @@ using UnityEngine;
 public class Bird : Enemy
 
 {
-    public MoneyCollection moneyCollection;
-    public PlayerHealth playerHealth;
-    public PlaneControlV2 planeControlV2;
-    public Weapon weapon;
+    private GameObject plane;
+    private MoneyCollection moneyCollection;
+    private PlayerHealth playerHealth;
+    private PlaneControlV2 planeControlV2;
+    private Weapon weapon;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
     public bool IsThisABird;
@@ -40,8 +41,6 @@ public class Bird : Enemy
     public override void InflictContactDamage(float amount)
     {
         playerHealth.TakeDamage(amount);
-    
-
     }
 
     public override void Attack()
@@ -83,6 +82,16 @@ public class Bird : Enemy
         {
             Debug.LogError("Renderer component not found");
         }
+    }
+
+    private void Awake()
+    {
+        plane = GameObject.FindWithTag("Player");
+        moneyCollection = plane.GetComponent<MoneyCollection>();
+        playerHealth = plane.GetComponent<PlayerHealth>();
+        planeControlV2 = plane.GetComponent<PlaneControlV2>();
+
+        weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
     }
 
     public void Start()

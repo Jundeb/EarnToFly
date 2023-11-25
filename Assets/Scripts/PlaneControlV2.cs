@@ -15,10 +15,10 @@ public class PlaneControlV2 : MonoBehaviour
     private float targetPitch;
 
     Rigidbody rb;
-    public CameraMovement cameraMovement;
-    public PlayerInputButton throttleButton;
-    public PlayerInputButton pitchControlUpButton;
-    public PlayerInputButton pitchControlDownButton;
+    private CameraMovement cameraMovement;
+    private PlayerInputButton throttleButton;
+    private PlayerInputButton pitchControlUpButton;
+    private PlayerInputButton pitchControlDownButton;
 
     //only used for propella animation
     [SerializeField] Transform propella;
@@ -26,11 +26,14 @@ public class PlaneControlV2 : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        throttleButton = GameObject.FindWithTag("ThrottleButton").GetComponent<PlayerInputButton>();
+        pitchControlUpButton = GameObject.FindWithTag("UpButton").GetComponent<PlayerInputButton>();
+        pitchControlDownButton = GameObject.FindWithTag("DownButton").GetComponent<PlayerInputButton>();
     }
 
     private void HandleInputs()
     {
-
         // Check if the pitch button is not pressed anymore (later change to work with buttons)
         if (pitchControlUpButton.ButtonState())
         {

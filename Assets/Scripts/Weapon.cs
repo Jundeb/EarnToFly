@@ -8,11 +8,11 @@ using UnityEngine.UIElements;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform ProjectilesSpawn;
+    private Transform ProjectilesSpawn;
     public GameObject projectilePrefab1;
     public GameObject projectilePrefab2;
     public GameObject projectilePrefab3;
-    public PlayerInputButton ShootButton;
+    private PlayerInputButton ShootButton;
     public Vector3 projectileScale;
     //Projectile scale
 
@@ -44,6 +44,12 @@ public class Weapon : MonoBehaviour
     };
 
     private float[] projectileForces;
+
+    private void Awake()
+    {
+        ProjectilesSpawn = GameObject.FindWithTag("ProjectileSpawn").GetComponent<Transform>();
+        ShootButton = GameObject.FindWithTag("ShootButton").GetComponent<PlayerInputButton>();
+    }
 
     void Start()
     {

@@ -13,13 +13,12 @@ public class Projectile : MonoBehaviour
     // when the projectile collides with something this happens
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("biplane_tag"))
+        if (collision.gameObject.CompareTag("biplane_tag") || collision.gameObject.CompareTag("HotAirBalloon"))
         {
-            Debug.Log("Virhe: ammus osui lentokoneeseen");
+            
         }
         else {
-            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

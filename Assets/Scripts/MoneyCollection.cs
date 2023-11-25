@@ -6,17 +6,20 @@ using UnityEngine.UI;
 
 public class MoneyCollection : MonoBehaviour
 {
-    public DistanceMeter distanceMeter;
+    private DistanceMeter distanceMeter;
     private float distanceTravelled;
     public int moneyCollected = 0;
-    public Text moneyText;
-    private bool hasIncremented = false; 
+    private Text moneyText;
+    private bool hasIncremented = false;
 
-
+    private void Awake()
+    {
+        distanceMeter = GameObject.FindWithTag("Player").GetComponent<DistanceMeter>();
+        moneyText = GameObject.FindWithTag("MoneyMeter").GetComponent<Text>();
+        moneyCollected = PlayerPrefs.GetInt("MoneyCollected", 0);
+    }
     void Start()
     {
-        moneyCollected = PlayerPrefs.GetInt("MoneyCollected", 0);
-
         distanceTravelled = distanceMeter.totalDistance;
     }
 

@@ -6,9 +6,12 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyObjects;
     public CameraMovement cameraMovement;
-    public DistanceMeter distanceMeter;
-    public Camera mainCamera;
+    private DistanceMeter distanceMeter;
 
+    private void Awake ()
+    {
+        distanceMeter = GameObject.FindWithTag("Player").GetComponent<DistanceMeter>();
+    }
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -31,17 +34,19 @@ public class EnemySpawner : MonoBehaviour
             {
                 Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
             }
+            else if (enemyObjects[randomIndex].CompareTag("HotAirBalloon"))
+            {
+                Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
+            }
         }
     }
 
     private void Update()
     {
-
         float cameraViewWidth = cameraMovement.GetCameraViewWidth();
         Vector3 cameraPosition = Camera.main.transform.position;
         
         Vector3 spawnerPosition = new Vector3(cameraPosition.x + 28 + cameraViewWidth / 2 * Time.deltaTime, cameraPosition.y, transform.position.z);
         transform.position = spawnerPosition;
-
     }
 }

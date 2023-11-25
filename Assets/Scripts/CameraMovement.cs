@@ -7,11 +7,16 @@ public class CameraMovement : MonoBehaviour
 {
     
     public float scrollSpeed = 5.0f;
-    public Transform target;
+    private Transform target;
     public float fixedZPosition = -30.0f;
     public float yCameraSmoothing = 3.0f;
 
     private Vector3 velocity = Vector3.zero;
+
+    private void Awake()
+    {
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
 
     public float GetCameraViewHeight()
     {

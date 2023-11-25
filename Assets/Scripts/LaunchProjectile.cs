@@ -24,7 +24,7 @@ public class LaunchProjectile : MonoBehaviour
         // Access the Rigidbody component of the projectile and add a relative force
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
 
-        ballRigidbody.AddRelativeForce(new Vector3(0, launchVelocity, 0));
+        ballRigidbody.AddRelativeForce(new Vector3(0, -launchVelocity, 0));
     }
 }
  

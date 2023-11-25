@@ -8,7 +8,12 @@ public class DistanceMeter : MonoBehaviour
 {
     private Vector3 lastPosition;
     internal float totalDistance = 0.0f;
-    public Text distanceText; // Reference to the Text component
+    private Text distanceText; // Reference to the Text component
+
+    private void Awake()
+    {
+        distanceText = GameObject.FindWithTag("DistanceMeter").GetComponent<Text>();
+    }
 
     // Start is called before the first frame update
     void Start()

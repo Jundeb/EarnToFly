@@ -7,10 +7,12 @@ using UnityEngine;
 public class HotAirBalloon : Enemy
 
 {
-    public MoneyCollection moneyCollection;
-    public PlayerHealth playerHealth;
-    public PlaneControlV2 planeControlV2;
+    private MoneyCollection moneyCollection;
+    private PlayerHealth playerHealth;
 
+    private GameObject plane;
+
+    private Weapon weapon;
     public LaunchProjectile launchProjectile;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
@@ -47,7 +49,6 @@ public class HotAirBalloon : Enemy
     public override void DropLoot()
     {
         moneyCollection.moneyCollected += loot;
-
     }
 
     public override void InflictContactDamage(float amount)
@@ -70,7 +71,7 @@ public class HotAirBalloon : Enemy
         else if (collision.gameObject.CompareTag("Projectile"))
         {
             // weapon damage
-            TakeDamage(1);
+            TakeDamage(weapon.projectile_Damage);
         }
     }
 
@@ -105,6 +106,15 @@ public class HotAirBalloon : Enemy
                 yield return null;
             }
         }
+    }
+
+    private void Awake()
+    {
+        plane = GameObject.FindGameObjectWithTag("Player");
+        moneyCollection = plane.GetComponent<MoneyCollection>();
+        playerHealth = plane.GetComponent<PlayerHealth>();
+
+        weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
     }
 
     public void Start()
@@ -145,6 +155,9 @@ public class HotAirBalloon : Enemy
 
     public void Update()
     {
-
+        if (transform.position.x < plane.transform.position.x - 50)
+        {
+            Destroy(gameObject);
+        }
     }
 }

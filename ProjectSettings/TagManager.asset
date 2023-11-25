@@ -8,6 +8,14 @@ TagManager:
   - Eagle
   - Bird
   - Projectile
+  - HotAirBalloon
+  - CannonBall
+  - Weapon
+  - DistanceMeter
+  - MoneyMeter
+  - DownButton
+  - UpButton
+  - ThrottleButton
   layers:
   - Default
   - TransparentFX
