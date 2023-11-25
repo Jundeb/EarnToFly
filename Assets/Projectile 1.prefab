@@ -16,11 +16,11 @@ GameObject:
   - component: {fileID: 2391300545376241467}
   m_Layer: 0
   m_Name: Projectile 1
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6118801698533443926
 Transform:
   m_ObjectHideFlags: 0

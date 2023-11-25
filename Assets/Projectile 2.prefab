@@ -16,11 +16,11 @@ GameObject:
   - component: {fileID: 2391300545376241467}
   m_Layer: 0
   m_Name: Projectile 2
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6118801698533443926
 Transform:
   m_ObjectHideFlags: 0
@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43d2a6ab3b67fc43b26e68c1eae26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   projectile_death_time: 10
