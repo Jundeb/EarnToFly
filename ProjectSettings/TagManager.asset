@@ -16,6 +16,8 @@ TagManager:
   - DownButton
   - UpButton
   - ThrottleButton
+  - ProjectileSpawn
+  - ShootButton
   layers:
   - Default
   - TransparentFX

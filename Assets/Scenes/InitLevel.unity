@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1134607325620672214, guid: 24adb35e2c38b4f44b539976a9dd6fce,
+        type: 3}
+      propertyPath: m_TagString
+      value: ShootButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2876686976021274636, guid: 24adb35e2c38b4f44b539976a9dd6fce,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1212,6 +1217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704591715755315976, guid: 071a13b9107a61541911e9e5f79add0c,
+        type: 3}
+      propertyPath: m_TagString
+      value: ProjectileSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 5158023767031763254, guid: 071a13b9107a61541911e9e5f79add0c,
         type: 3}
