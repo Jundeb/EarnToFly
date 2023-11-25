@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
     private int currentProjectileIndex = 0;
     private Vector3[] projectileScales = {
         new Vector3(0.3f, 0.3f, 0.3f),
-        new Vector3(0.5f, 0.5f, 0.5f),
+        new Vector3(1.0f, 1.0f, 1.0f),
         new Vector3(0.2f, 0.2f, 0.4f)
     };
 
@@ -121,9 +121,5 @@ public class Weapon : MonoBehaviour
         }
         //sets the projectile to move
         projectileRigidBody.AddRelativeForce(ProjectilesForce);
-
-        //Old projectile
-        //sets the speed of the projectile
-        //projectile.GetComponent<Rigidbody>().velocity = ProjectilesSpawn.forward * projectile_speed;
     }
 }
