@@ -18,6 +18,7 @@ TagManager:
   - ThrottleButton
   - ProjectileSpawn
   - ShootButton
+  - CannonBallSpawner
   layers:
   - Default
   - TransparentFX
