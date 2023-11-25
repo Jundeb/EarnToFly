@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2145598543894398131}
   - component: {fileID: 2537408181518502439}
   - component: {fileID: -4722123131404119391}
+  - component: {fileID: -245247011024525578}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: CannonBall
@@ -147,3 +148,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_death_time: 10
+--- !u!114 &-245247011024525578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398738222709010059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e875e58a44a92549a9f6c2050b1de51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  spawnLocation: 0
+  movementSpeed: 0
+  contactDamage: 2
+  loot: 0
+  cannonBallDamage: 2

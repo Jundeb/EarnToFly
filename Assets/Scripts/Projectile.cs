@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     // when the projectile collides with something this happens
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("HotAirBalloon"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CannonBallSpawner"))
         {
             
         }

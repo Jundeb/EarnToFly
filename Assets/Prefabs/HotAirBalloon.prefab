@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2607432180612502551}
   m_Layer: 0
   m_Name: CannonBallSpawner
-  m_TagString: Untagged
+  m_TagString: CannonBallSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +251,6 @@ MonoBehaviour:
   color1: {r: 0, g: 0, b: 1, a: 1}
   color2: {r: 1, g: 0, b: 0, a: 1}
   IsThisAHotAirBalloonV1: 0
-  IsThisAHotAirBalloonV2: 1
-  IsThisAHotAirBalloonV3: 0
+  IsThisAHotAirBalloonV2: 0
+  IsThisAHotAirBalloonV3: 1
   movementDuration: 5
