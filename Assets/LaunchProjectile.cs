@@ -11,12 +11,12 @@ public class LaunchProjectile : MonoBehaviour
 
     public float cooldownDuration = 0.5f;
 
-    private void Start()
+    public void StartDroppinCannonBalls()
     {
         InvokeRepeating("DropCannonBall", 0f, cooldownDuration);
     }
 
-    void DropCannonBall()
+    public void DropCannonBall()
     {
         // Instantiate a new projectile at the spawner's position and rotation
         GameObject ball = Instantiate(projectile, transform.position, transform.rotation);
@@ -24,7 +24,7 @@ public class LaunchProjectile : MonoBehaviour
         // Access the Rigidbody component of the projectile and add a relative force
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
 
-        ballRigidbody.AddRelativeForce(new Vector3( launchVelocity, 0, 0));
+        ballRigidbody.AddRelativeForce(new Vector3(0, launchVelocity, 0));
     }
 }
  

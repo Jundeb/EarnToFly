@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 1638548885}
   - component: {fileID: 1638548884}
   - component: {fileID: 1638548883}
+  - component: {fileID: 1638548887}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -691,6 +692,34 @@ Transform:
   - {fileID: 2002604779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638548887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638548881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638a91e7c61f9164fae8f311d4309a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  color: {r: 0, g: 0, b: 0, a: 0}
+  spawnLocation: 5
+  movementSpeed: 5
+  contactDamage: 5
+  loot: 10
+  moneyCollection: {fileID: 0}
+  playerHealth: {fileID: 0}
+  planeControlV2: {fileID: 0}
+  color1: {r: 0, g: 0, b: 1, a: 1}
+  color2: {r: 1, g: 0, b: 0, a: 1}
+  IsThisAHotAirBalloonV1: 1
+  IsThisAHotAirBalloonV2: 0
+  IsThisAHotAirBalloonV3: 0
+  cannonBall: {fileID: 6398738222709010059, guid: acee77cdd090dad4c923de0654ad16df,
+    type: 3}
 --- !u!1 &2002604778
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +732,6 @@ GameObject:
   - component: {fileID: 2002604782}
   - component: {fileID: 2002604781}
   - component: {fileID: 2002604780}
-  - component: {fileID: 2002604783}
   m_Layer: 0
   m_Name: ProjectileSpawn
   m_TagString: Untagged
@@ -797,22 +825,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002604778}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2002604783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002604778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28c76bc6fd88f5e418e55bba126f9dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 6398738222709010059, guid: acee77cdd090dad4c923de0654ad16df,
-    type: 3}
-  launchVelocity: 700
-  cooldownDuration: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
