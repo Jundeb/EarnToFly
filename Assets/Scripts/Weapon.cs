@@ -84,7 +84,7 @@ public class Weapon : MonoBehaviour
             lastShotTime = Time.time;
         }
         
-        print(Time.time);
+        // print(Time.time);
     }
     void ChangeProjectile(int newIndex)
     {

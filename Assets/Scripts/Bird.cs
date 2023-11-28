@@ -47,13 +47,17 @@ public class Bird : Enemy
     {
         if(IsThisABird)
         {
-            // do nothing
+            float amplitude = 0.15f;
+            float frequency = 0.75f;
+            transform.position += Vector3.up * Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         }
         else
         {
             Vector3 targetPosition = new Vector3(transform.position.x, planeControlV2.transform.position.y, transform.position.z);
             // move towards the player along the y axis
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         }
         
     }
@@ -98,10 +102,10 @@ public class Bird : Enemy
     {
         if (IsThisABird)
         {
-            SetColor(color1);
             health = 1;
             loot = 10;
             contactDamage = 10;
+            movementSpeed = 3;
         }
         else
         {
@@ -111,6 +115,7 @@ public class Bird : Enemy
             contactDamage = 20;
             movementSpeed = 5;
         }
+        Destroy(gameObject, 30);
     }
 
     public void Update()
