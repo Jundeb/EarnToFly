@@ -10,6 +10,10 @@ public class PlayerHealth : MonoBehaviour
     public Text healthText;
     void Start()
     {
+        if(StatManager.Instance != null)
+        {
+            maxHealth = StatManager.Instance.healthMultiplier * maxHealth;
+        }
         health = maxHealth;
     }
 

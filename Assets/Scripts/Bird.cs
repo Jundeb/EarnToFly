@@ -47,7 +47,7 @@ public class Bird : Enemy
     {
         if(IsThisABird)
         {
-            float amplitude = 0.15f;
+            float amplitude = 0.05f;
             float frequency = 0.75f;
             transform.position += Vector3.up * Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
             transform.position += Vector3.left * movementSpeed * Time.deltaTime;
