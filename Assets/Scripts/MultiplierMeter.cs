@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +5,12 @@ public class MultiplierMeter : MonoBehaviour
 {
     [SerializeField] public string multiplierKey;
     [SerializeField] private Text multiplierText;
-
     private float multiplier;
+    private StatManager statManager;
 
     private void Awake()
     {
-        multiplier = PlayerPrefs.GetFloat(multiplierKey, 1);
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         if (multiplierText == null)
         {
             Debug.LogError("Multiplier Text is not assigned!");
@@ -21,7 +19,21 @@ public class MultiplierMeter : MonoBehaviour
 
     private void Update()
     {
-        multiplier = PlayerPrefs.GetFloat(multiplierKey, 1);
+        switch (multiplierKey)
+        {
+            case "Health":
+                multiplier = statManager.healthMultiplier;
+                break;
+            case "MaxAmmo":
+                multiplier = statManager.maxAmmoMultiplier;
+                break;
+            case "Acceleration":
+                multiplier = statManager.accelerationMultiplier;
+                break;
+            default:
+                Debug.LogError("Invalid multiplier key: " + multiplierKey);
+                break;
+        }
         multiplierText.text = multiplier.ToString() + "x";
     }
 }

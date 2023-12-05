@@ -16,14 +16,11 @@ public class BuyUpgrade : MonoBehaviour
         buyMaxAmmoButton = GameObject.FindWithTag("BuyMaxAmmoButton").GetComponent<Button>();
         buyAccelerationButton = GameObject.FindWithTag("BuyAccelerationButton").GetComponent<Button>();
 
-        int healthUpgradeCost = PlayerPrefs.GetInt("HealthUpgradeCost", 100);
-        healthUpgrade = new Upgrade("Health", 1.0f, healthUpgradeCost);
+        healthUpgrade = new Upgrade("Health", 1.0f, statManager.healthUpgradeCost);
 
-        int maxAmmoUpgradeCost = PlayerPrefs.GetInt("MaxAmmoUpgradeCost", 200);
-        maxAmmoUpgrade = new Upgrade("MaxAmmo", 1.0f, maxAmmoUpgradeCost);
+        maxAmmoUpgrade = new Upgrade("MaxAmmo", 1.0f, statManager.maxAmmoUpgradeCost);
 
-        int accelerationUpgradeCost = PlayerPrefs.GetInt("AccelerationUpgradeCost", 100);
-        accelerationUpgrade = new Upgrade("Acceleration", 1.0f, accelerationUpgradeCost);
+        accelerationUpgrade = new Upgrade("Acceleration", 1.0f, statManager.accelerationUpgradeCost);
     }
 
     void Start()
@@ -40,30 +37,20 @@ public class BuyUpgrade : MonoBehaviour
             if (upgrade == healthUpgrade)
             {
                 statManager.healthMultiplier = healthUpgrade.Multiplier;
-                PlayerPrefs.SetFloat("HealthMultiplier", healthUpgrade.Multiplier);
-                
                 statManager.healthUpgradeCost = healthUpgrade.Cost;
-                PlayerPrefs.SetInt("HealthUpgradeCost", healthUpgrade.Cost);
             }
             else if (upgrade == maxAmmoUpgrade)
             {
                 statManager.maxAmmoMultiplier = (int)maxAmmoUpgrade.Multiplier;
-                PlayerPrefs.SetFloat("MaxAmmoMultiplier", maxAmmoUpgrade.Multiplier);
-                
                 statManager.maxAmmoUpgradeCost = maxAmmoUpgrade.Cost;
-                PlayerPrefs.SetInt("MaxAmmoUpgradeCost", maxAmmoUpgrade.Cost);
             }
             else if (upgrade == accelerationUpgrade)
             {
                 statManager.accelerationMultiplier = accelerationUpgrade.Multiplier;
-                PlayerPrefs.SetFloat("AccelerationMultiplier", accelerationUpgrade.Multiplier);
-                
                 statManager.accelerationUpgradeCost = accelerationUpgrade.Cost;
-                PlayerPrefs.SetInt("AccelerationUpgradeCost", accelerationUpgrade.Cost);
             }
 
-            PlayerPrefs.SetInt("MoneyCollected", statManager.moneyCollected);
-
+            statManager.SaveStats();
         }
     }
 }

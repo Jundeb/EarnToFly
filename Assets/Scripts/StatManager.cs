@@ -37,6 +37,17 @@ public class StatManager : MonoBehaviour
     public void LoadStats()
     {
         PlayerData data = SaveSystem.LoadPlayer();
+        if (data == null)
+        {
+            healthMultiplier = 1.0f;
+            healthUpgradeCost = 100;
+            maxAmmoMultiplier = 1;
+            maxAmmoUpgradeCost = 100;
+            accelerationMultiplier = 1.0f;
+            accelerationUpgradeCost = 100;
+            moneyCollected = 0;
+            return;
+        }
         healthMultiplier = data.healthMultiplier;
         healthUpgradeCost = data.healthUpgradeCost;
         maxAmmoMultiplier = data.maxAmmoMultiplier;

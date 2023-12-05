@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34dc347afa404c43bcad61d960b495a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplierKey: AccelerationMultiplier
+  multiplierKey: Acceleration
   multiplierText: {fileID: 109055822}
 --- !u!114 &109055822
 MonoBehaviour:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34dc347afa404c43bcad61d960b495a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplierKey: HealthMultiplier
+  multiplierKey: Health
   multiplierText: {fileID: 129682912}
 --- !u!1 &169632730
 GameObject:
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34dc347afa404c43bcad61d960b495a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplierKey: MaxAmmoMultiplier
+  multiplierKey: MaxAmmo
   multiplierText: {fileID: 1690763039}
 --- !u!1 &1775875681
 GameObject:
