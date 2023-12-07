@@ -24,16 +24,22 @@ public class MultiplierMeter : MonoBehaviour
             case "Health":
                 multiplier = statManager.healthMultiplier;
                 break;
-            case "MaxAmmo":
-                multiplier = statManager.maxAmmoMultiplier;
+            case "Money":
+                multiplier = statManager.moneyMultiplier;
                 break;
             case "Acceleration":
                 multiplier = statManager.accelerationMultiplier;
+                break;
+            case "MaxAmmo":
+                multiplier = statManager.maxAmmoMultiplier;
+                break;
+            case "FireRate":
+                multiplier = statManager.fireRateMultiplier;
                 break;
             default:
                 Debug.LogError("Invalid multiplier key: " + multiplierKey);
                 break;
         }
-        multiplierText.text = multiplier.ToString() + "x";
+        multiplierText.text = multiplier.ToString() + "x\nUpgrades left " + (10 - statManager.CurrentUpgrades[multiplierKey]).ToString();
     }
 }

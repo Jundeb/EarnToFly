@@ -11,6 +11,7 @@ public class Bird : Enemy
     private MoneyCollection moneyCollection;
     private PlayerHealth playerHealth;
     private PlaneControlV2 planeControlV2;
+    private StatManager statManager;
     private Weapon weapon;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
@@ -34,7 +35,8 @@ public class Bird : Enemy
 
     public override void DropLoot()
     {
-        moneyCollection.moneyCollected += loot;
+        moneyCollection.moneyCollected += (int)Math.Round(loot * statManager.moneyMultiplier, MidpointRounding.AwayFromZero);
+
 
     }
 
@@ -94,7 +96,7 @@ public class Bird : Enemy
         moneyCollection = plane.GetComponent<MoneyCollection>();
         playerHealth = plane.GetComponent<PlayerHealth>();
         planeControlV2 = plane.GetComponent<PlaneControlV2>();
-
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
     }
 

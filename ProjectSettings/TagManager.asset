@@ -24,6 +24,8 @@ TagManager:
   - HealthMultiplierText
   - BuyMaxAmmoButton
   - BuyAccelerationButton
+  - BuyMoneyButton
+  - BuyFireRateButton
   layers:
   - Default
   - TransparentFX
