@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class StartingMenu : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class StartingMenu : MonoBehaviour
         Application.Quit();
     }
     // OPTIONS MENU
+    public AudioMixer GameAudioMixer;
+
     public void ReturnButton()
     {
         OptionsPanel.SetActive(false);
@@ -30,5 +33,9 @@ public class StartingMenu : MonoBehaviour
     public void ToggleFullscreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
+    }
+    public void SetVolume(float volume)
+    {
+        GameAudioMixer.SetFloat("GameVolume", volume);
     }
 }
