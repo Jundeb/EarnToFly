@@ -14,6 +14,6 @@ public class GoToLevel : MonoBehaviour
 	}
 
 	void TaskOnClick(){
-		SceneManager.LoadScene("ForestLevel");
+		SceneManager.LoadScene("ModelScene");
 	}
 }

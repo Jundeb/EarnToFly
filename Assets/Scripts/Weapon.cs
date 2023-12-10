@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     //Projectile fire rate after which you can shoot again, the lower it is the faster you can shoot
     public float projectile_Damage = 1;
     // damage of the weapons projectiles
-    public float projectile_speed = 1000f;
+    private float projectile_speed = 2000f;
     //Projectile speed aka bullet speed
 
     private float lastShotTime = -100.0f;

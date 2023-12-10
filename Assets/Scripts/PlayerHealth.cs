@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private StatManager statManager;
     public float health;
     public float maxHealth = 100;
     public Text healthText;
@@ -15,6 +17,11 @@ public class PlayerHealth : MonoBehaviour
             maxHealth = StatManager.Instance.healthMultiplier * maxHealth;
         }
         health = maxHealth;
+    }
+
+    void Awake()
+    {
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
     }
 
     void Update()
@@ -28,7 +35,8 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            statManager.SaveStats();
+            SceneManager.LoadScene("UpgradeScreen");
         }
     }
 }
