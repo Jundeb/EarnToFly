@@ -11,6 +11,7 @@ public class Bird : Enemy
     private MoneyCollection moneyCollection;
     private PlayerHealth playerHealth;
     private PlaneControlV2 planeControlV2;
+    private StatManager statManager;
     private Weapon weapon;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
@@ -34,7 +35,8 @@ public class Bird : Enemy
 
     public override void DropLoot()
     {
-        moneyCollection.moneyCollected += loot;
+        moneyCollection.moneyCollected += (int)Math.Round(loot * statManager.moneyMultiplier, MidpointRounding.AwayFromZero);
+
 
     }
 
@@ -47,13 +49,17 @@ public class Bird : Enemy
     {
         if(IsThisABird)
         {
-            // do nothing
+            float amplitude = 0.05f;
+            float frequency = 0.75f;
+            transform.position += Vector3.up * Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         }
         else
         {
             Vector3 targetPosition = new Vector3(transform.position.x, planeControlV2.transform.position.y, transform.position.z);
             // move towards the player along the y axis
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         }
         
     }
@@ -90,7 +96,7 @@ public class Bird : Enemy
         moneyCollection = plane.GetComponent<MoneyCollection>();
         playerHealth = plane.GetComponent<PlayerHealth>();
         planeControlV2 = plane.GetComponent<PlaneControlV2>();
-
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
     }
 
@@ -98,10 +104,10 @@ public class Bird : Enemy
     {
         if (IsThisABird)
         {
-            SetColor(color1);
             health = 1;
             loot = 10;
             contactDamage = 10;
+            movementSpeed = 3;
         }
         else
         {
@@ -111,6 +117,7 @@ public class Bird : Enemy
             contactDamage = 20;
             movementSpeed = 5;
         }
+        Destroy(gameObject, 30);
     }
 
     public void Update()
