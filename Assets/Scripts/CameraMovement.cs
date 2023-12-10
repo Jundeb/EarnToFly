@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     
-    public float scrollSpeed = 5.0f;
+    public float scrollSpeed = 20.0f;
     private Transform target;
     public float fixedZPosition = -30.0f;
     public float yCameraSmoothing = 3.0f;

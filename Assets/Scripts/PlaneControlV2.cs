@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class PlaneControlV2 : MonoBehaviour
 {
-    public float flySpeed = 10f;
-    public float minSpeed = 10f;
-    public float maxSpeed = 50f;
+    public float flySpeed = 20f;
+    public float minSpeed = 20f;
+    public float maxSpeed = 70f;
     public float flySpeedIncrement;
-    public float maxAltitude = 80f;
+    public float maxAltitude = 2500f;
 
     public float rotationSmoothing = 1.0f;
     public float correctionSpeed = 1.0f;
@@ -55,7 +55,7 @@ public class PlaneControlV2 : MonoBehaviour
         }
         else if (!throttleButton.ButtonState())
         {
-            flySpeed -= flySpeedIncrement / 2;
+            flySpeed -= 1;
         }
 
         flySpeed = Mathf.Clamp(flySpeed, minSpeed, maxSpeed);
@@ -79,7 +79,7 @@ public class PlaneControlV2 : MonoBehaviour
         }
 
         // Rotate the cube by converting the angles into a quaternion.
-        Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 90);
+        Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 60);
 
         // Dampen towards the target rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.fixedDeltaTime * rotationSmoothing);
