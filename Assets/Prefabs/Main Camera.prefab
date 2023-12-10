@@ -105,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6eec4c3c1c944042ae19108d53b799d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 20
-  target: {fileID: 4586644071148276757, guid: fb259d44121719a4396c1dee107b7471, type: 3}
+  scrollSpeed: 30
   fixedZPosition: -30
   yCameraSmoothing: 3
