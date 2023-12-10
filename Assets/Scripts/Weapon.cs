@@ -14,14 +14,15 @@ public class Weapon : MonoBehaviour
     public GameObject projectilePrefab3;
     private PlayerInputButton ShootButton;
     public Vector3 projectileScale;
+    private StatManager statManager;
     //Projectile scale
 
-    public int ammo_max = 10;
-    public int ammo_amount = 10;
+    public int ammo_max;
+    public int ammo_amount;
     //Ammo count of the weapon
-    public float reload_speed = 2.0f;
+    public float reload_speed = 5.0f;
     //Reload speed at which ammo come back after shooting
-    public float fire_rate = 2.0f;
+    public float fire_rate;
     //Projectile fire rate after which you can shoot again, the lower it is the faster you can shoot
     public float projectile_Damage = 1;
     // damage of the weapons projectiles
@@ -49,6 +50,10 @@ public class Weapon : MonoBehaviour
     {
         ProjectilesSpawn = GameObject.FindWithTag("ProjectileSpawn").GetComponent<Transform>();
         ShootButton = GameObject.FindWithTag("ShootButton").GetComponent<PlayerInputButton>();
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
+        ammo_max = statManager.maxAmmoMultiplier;
+        ammo_amount = ammo_max;
+        fire_rate = 1.5f - statManager.fireRateMultiplier;
     }
 
     void Start()
@@ -84,7 +89,7 @@ public class Weapon : MonoBehaviour
             lastShotTime = Time.time;
         }
         
-        print(Time.time);
+        // print(Time.time);
     }
     void ChangeProjectile(int newIndex)
     {

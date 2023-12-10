@@ -19,6 +19,13 @@ TagManager:
   - ProjectileSpawn
   - ShootButton
   - CannonBallSpawner
+  - BuyHealthButton
+  - StatManager
+  - HealthMultiplierText
+  - BuyMaxAmmoButton
+  - BuyAccelerationButton
+  - BuyMoneyButton
+  - BuyFireRateButton
   layers:
   - Default
   - TransparentFX

@@ -16,8 +16,12 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CannonBallSpawner"))
         {
             
+        } else if (gameObject.CompareTag("CannonBall") && collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }

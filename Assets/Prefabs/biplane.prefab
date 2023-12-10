@@ -176,17 +176,9 @@ MonoBehaviour:
   minSpeed: 20
   maxSpeed: 40
   flySpeedIncrement: 0.1
-  maxAltitude: 80
+  maxAltitude: 2000
   rotationSmoothing: 1
   correctionSpeed: 1
-  cameraMovement: {fileID: 6838418942226941935, guid: c55e040af85cda4408e9743ea5a172c6,
-    type: 3}
-  throttleButton: {fileID: 6363367330030577664, guid: 9f7fce0e35ff722499adf43f4153fad5,
-    type: 3}
-  pitchControlUpButton: {fileID: 1119026904913710680, guid: 4db752b08a189ba4d83b29ee3cab3db8,
-    type: 3}
-  pitchControlDownButton: {fileID: 9060335187417788724, guid: 4322306006af9b1488ae80d6c2a6b24c,
-    type: 3}
   propella: {fileID: 6208949870645395084}
 --- !u!114 &712123296544888177
 MonoBehaviour:
@@ -200,10 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4801689456ac464999c6b96bfd5f4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMeter: {fileID: 3730291315958826528}
   moneyCollected: 260
-  moneyText: {fileID: 4938767247281839787, guid: 11f29d900fa7fdd4fafd7a1b44bf26c0,
-    type: 3}
 --- !u!114 &3730291315958826528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cabc26a82a6a59409e53895ba206b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceText: {fileID: 7233041392993492897, guid: 3e563a55c28add2488738620bc49de1d,
-    type: 3}
 --- !u!114 &1897835013817308613
 MonoBehaviour:
   m_ObjectHideFlags: 0

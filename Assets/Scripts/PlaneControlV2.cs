@@ -15,6 +15,7 @@ public class PlaneControlV2 : MonoBehaviour
     private float targetPitch;
 
     Rigidbody rb;
+    private StatManager statManager;
     private CameraMovement cameraMovement;
     private PlayerInputButton throttleButton;
     private PlayerInputButton pitchControlUpButton;
@@ -27,6 +28,7 @@ public class PlaneControlV2 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         throttleButton = GameObject.FindWithTag("ThrottleButton").GetComponent<PlayerInputButton>();
         pitchControlUpButton = GameObject.FindWithTag("UpButton").GetComponent<PlayerInputButton>();
         pitchControlDownButton = GameObject.FindWithTag("DownButton").GetComponent<PlayerInputButton>();
@@ -51,7 +53,7 @@ public class PlaneControlV2 : MonoBehaviour
         //handle throttle value being sure to clamp it between 0 and 100
         if (throttleButton.ButtonState() || Input.GetKey(KeyCode.Space))
         {
-            flySpeed += flySpeedIncrement;
+            flySpeed += statManager.accelerationMultiplier;
         }
         else if (!throttleButton.ButtonState())
         {
@@ -79,6 +81,7 @@ public class PlaneControlV2 : MonoBehaviour
         }
 
         // Rotate the cube by converting the angles into a quaternion.
+        Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 60);
         Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 60);
 
         // Dampen towards the target rotation
