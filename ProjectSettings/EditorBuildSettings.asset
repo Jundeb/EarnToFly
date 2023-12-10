@@ -9,9 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: b813b6efd8230e141ae6e144a16a937d
   - enabled: 1
+    path: Assets/Scenes/UpgradeScreen.unity
+    guid: da6b1c7e8b0f93447b10ca6bc5d16667
+  - enabled: 1
+    path: Assets/Scenes/ForestLevel.unity
+    guid: a5a18c156f26a134ab5d8c56a68d18ec
+  - enabled: 1
     path: Assets/Scenes/InitLevel.unity
     guid: 7f36d1d048f339b4d95c7828d8246767
-
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 75293a8d60489ae4f85302b1faabd6fe,
       type: 2}
