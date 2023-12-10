@@ -82,7 +82,6 @@ public class PlaneControlV2 : MonoBehaviour
 
         // Rotate the cube by converting the angles into a quaternion.
         Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 60);
-        Quaternion target = Quaternion.Euler(0f, 0f, targetPitch * 60);
 
         // Dampen towards the target rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.fixedDeltaTime * rotationSmoothing);
