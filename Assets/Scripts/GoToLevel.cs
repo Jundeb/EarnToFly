@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class GoToLevel : MonoBehaviour
 {
 	public Button goToLevelButton;
+	public string LevelDirection = "";
 
 	void Start () {
 		Button btn = goToLevelButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
 	}
-
 	void TaskOnClick(){
-		SceneManager.LoadScene("ModelScene");
+		SceneManager.LoadScene(LevelDirection);
 	}
 }
