@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     private PlayerInputButton ShootButton;
     public Vector3 projectileScale;
     private StatManager statManager;
+    private WeaponSounds weaponSounds;
     //Projectile scale
 
     public int ammo_max;
@@ -51,6 +52,7 @@ public class Weapon : MonoBehaviour
         ProjectilesSpawn = GameObject.FindWithTag("ProjectileSpawn").GetComponent<Transform>();
         ShootButton = GameObject.FindWithTag("ShootButton").GetComponent<PlayerInputButton>();
         statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
+        weaponSounds = GameObject.FindWithTag("Weapon").GetComponent<WeaponSounds>();
         ammo_max = statManager.maxAmmoMultiplier;
         ammo_amount = ammo_max;
         fire_rate = 1.5f - statManager.fireRateMultiplier;
@@ -84,6 +86,7 @@ public class Weapon : MonoBehaviour
         // button is pressed and cooldown duration has passed since last shot
         if (ShootButton.ButtonState()==true && Time.time - lastShotTime >= fire_rate && ammo_amount >= 1)
         {
+            weaponSounds.PlayShootSound();
             ShootProjectile();
             //sets the time for the shot
             lastShotTime = Time.time;
