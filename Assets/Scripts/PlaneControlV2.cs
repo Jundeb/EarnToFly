@@ -68,7 +68,7 @@ public class PlaneControlV2 : MonoBehaviour
     {
         HandleInputs();
 
-        propella.Rotate(Vector3.right * flySpeed * 5);
+        propella.Rotate(Vector3.fwd * flySpeed * 5);
     }
 
     private void FixedUpdate()

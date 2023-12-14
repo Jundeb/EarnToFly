@@ -56,7 +56,7 @@ public class MoneyCollection : MonoBehaviour
         if (currentScene.name != "UpgradeScreen")
         {
             distanceTravelled = distanceMeter.totalDistance;
-            moneyText.text = "Money: " + moneyCollected.ToString() + " €";
+            moneyText.text = moneyCollected.ToString() + " €";
 
             int distanceTravelledInt = (int)distanceTravelled;
 

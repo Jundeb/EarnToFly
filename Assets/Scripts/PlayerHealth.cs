@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     private StatManager statManager;
-    public float health;
+    public float currentHealth;
     public float maxHealth = 100;
-    public Text healthText;
+
+    public Image mask;
     void Start()
     {
         if(StatManager.Instance != null)
         {
             maxHealth = StatManager.Instance.healthMultiplier * maxHealth;
         }
-        health = maxHealth;
+        currentHealth = maxHealth;
     }
 
     void Awake()
@@ -26,17 +28,22 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        healthText.text = "Health: " + health.ToString() + " / " + maxHealth.ToString();
-        
+        GetCurrentFill();
     }
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0)
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
             statManager.SaveStats();
             SceneManager.LoadScene("UpgradeScreen");
         }
+    }
+
+        void GetCurrentFill()
+    {
+        float fillAmount = (float)currentHealth / (float)maxHealth;
+        mask.fillAmount = fillAmount;
     }
 }
