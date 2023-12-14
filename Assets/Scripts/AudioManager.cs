@@ -11,18 +11,22 @@ public class AudioManager : MonoBehaviour
     public string ExposedVolumeParam = "GameVolume";
     public void LoadAudioSettings()
     {
+        /*
         if (PlayerPrefs.HasKey("SavedVolume"))
         {
             float savedVolume = PlayerPrefs.GetFloat("SavedVolume");
             SetVolume(savedVolume);
         }
+        */
     }
     public void SaveAudioSettings()
     {
+        /*
         float volume;
         GameAudioMixer.GetFloat(ExposedVolumeParam, out volume);
         PlayerPrefs.SetFloat("SavedVolume", volume);
         PlayerPrefs.Save();
+        */
     }
     public void SetVolume(float volume)
     {

@@ -21,6 +21,10 @@ public class StartingMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         OptionsPanel.SetActive(true);
     }
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScreen");
+    }
     public void QuitGame()
     {
         Application.Quit();
