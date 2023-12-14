@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070575535, g: 0.35377097, b: 0.9707823, a: 1}
+  m_IndirectSpecularColor: {r: 0.07049309, g: 0.35368264, b: 0.97079754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,6 +733,74 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1754300722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &287523864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 43.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.60885096
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6088511
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3595837
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.35958374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -28.868
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571065988652193475, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059372964465314937, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
+        type: 3}
+      propertyPath: m_Name
+      value: PotatoProjectile2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 222b8a4aa489b2047ad759aa5cf42b3b, type: 3}
 --- !u!1 &290387211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,11 +1501,11 @@ MonoBehaviour:
     type: 3}
   projectilePrefab3: {fileID: 9059372964465314937, guid: 222b8a4aa489b2047ad759aa5cf42b3b,
     type: 3}
-  projectileScale: {x: 0, y: 0, z: 0}
-  ammo_max: 0
-  ammo_amount: 0
+  projectileScale: {x: 1, y: 1, z: 1}
+  ammo_max: 10
+  ammo_amount: 10
   reload_speed: 5
-  fire_rate: 0
+  fire_rate: 1
   projectile_Damage: 1
 --- !u!1 &481257606
 GameObject:
@@ -4181,7 +4249,7 @@ Transform:
   m_GameObject: {fileID: 1553001067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10.05, y: 0, z: -0}
+  m_LocalPosition: {x: -20.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6382,3 +6450,4 @@ SceneRoots:
   - {fileID: 1024167358}
   - {fileID: 90575846}
   - {fileID: 1260743768}
+  - {fileID: 287523864}
