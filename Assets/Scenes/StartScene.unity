@@ -1468,8 +1468,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 304860313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4607,7 +4607,7 @@ RectTransform:
   m_Father: {fileID: 1144567412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5058,6 +5058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479e77436ba20f341a5b7286a17ce499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1498903725}
   OptionsPanel: {fileID: 1815362270}
   MainMenuPanel: {fileID: 2043817308}
 --- !u!114 &1498903725
@@ -5074,6 +5075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameAudioMixer: {fileID: 24100000, guid: 72993bf59b111a840b25ba12661f758e, type: 2}
   VolumeSliderText: {fileID: 507695160}
+  VolumeSlider: {fileID: 1593736006}
   ExposedVolumeParam: GameVolume
 --- !u!1001 &1530457534
 PrefabInstance:
@@ -6646,7 +6648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1815362271
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6962,7 +6964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2043817309
 RectTransform:
   m_ObjectHideFlags: 0

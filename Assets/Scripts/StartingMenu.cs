@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class StartingMenu : MonoBehaviour
 {
-    private AudioManager AudioManager;
+    public AudioManager AudioManager;
     public GameObject OptionsPanel;
     public GameObject MainMenuPanel;
     // MAIN MENU
