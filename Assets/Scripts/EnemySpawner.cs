@@ -21,23 +21,31 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1, 4));
+            yield return new WaitForSeconds(Random.Range(1, 3));
             Vector3 BirdRotation = new Vector3(0, -90, 0);
 
             int randomIndex = Random.Range(0, enemyObjects.Length);
-            Vector3 enemySpawnLocation = new Vector3(transform.position.x + 60, transform.position.y + Random.Range(-20, 20), transform.position.z);
+            Vector3 enemySpawnLocation = new Vector3(transform.position.x + 60, transform.position.y + Random.Range(-15, 5), transform.position.z);
 
-            if (enemyObjects[randomIndex].CompareTag("Eagle") && distanceMeter.totalDistance > 500 )
+            if (enemyObjects[randomIndex].CompareTag("HotAirBalloonV1") && distanceMeter.totalDistance > 4000 )
+            {
+                Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
+            }
+            else if (enemyObjects[randomIndex].CompareTag("HotAirBalloonV2") && distanceMeter.totalDistance > 6000 )
+            {
+                Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
+            }
+            else if (enemyObjects[randomIndex].CompareTag("HotAirBalloonV3") && distanceMeter.totalDistance > 8000 )
+            {
+                Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
+            }
+            else if (enemyObjects[randomIndex].CompareTag("Eagle") && distanceMeter.totalDistance > 2000 )
             {
                 Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
             }
             else if (enemyObjects[randomIndex].CompareTag("Bird"))
             {
                 Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.Euler(BirdRotation));
-            }
-            else if (enemyObjects[randomIndex].CompareTag("HotAirBalloon"))
-            {
-                Instantiate(enemyObjects[randomIndex], enemySpawnLocation, Quaternion.identity);
             }
         }
     }

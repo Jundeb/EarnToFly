@@ -26,6 +26,9 @@ TagManager:
   - BuyAccelerationButton
   - BuyMoneyButton
   - BuyFireRateButton
+  - HotAirBalloonV1
+  - HotAirBalloonV2
+  - HotAirBalloonV3
   layers:
   - Default
   - TransparentFX

@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
     private float RandomAccuracy;
     private int currentProjectileIndex = 0;
     private Vector3[] projectileScales = {
-        new Vector3(0.3f, 0.3f, 0.3f),
+        new Vector3(30f, 30f, 30f),
         new Vector3(1.0f, 1.0f, 1.0f),
         new Vector3(0.2f, 0.2f, 0.4f)
     };
