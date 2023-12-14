@@ -117,11 +117,15 @@ public class Bird : Enemy
             contactDamage = 20;
             movementSpeed = 5;
         }
-        Destroy(gameObject, 30);
     }
 
     public void Update()
     {
         Attack();
+        if (transform.position.x < plane.transform.position.x - 60)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

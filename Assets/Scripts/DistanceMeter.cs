@@ -6,7 +6,7 @@ using UnityEngine.UI; // Import the UI namespace
 
 public class DistanceMeter : MonoBehaviour
 {
-    private Vector3 lastPosition;
+    private float lastXPosition;
     internal float totalDistance = 0.0f;
     private Text distanceText; // Reference to the Text component
 
@@ -18,18 +18,17 @@ public class DistanceMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastPosition = transform.position;
+        lastXPosition = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, lastPosition);
+        float distance = Mathf.Abs(transform.position.x - lastXPosition);
         totalDistance += distance;
-        lastPosition = transform.position;
+        lastXPosition = transform.position.x;
 
         // Set the text of the Text component to the total distance rounded off to two decimal places
         distanceText.text = "Distance: " + Math.Round(totalDistance, 0).ToString() + " units";
-  
     }
 }
