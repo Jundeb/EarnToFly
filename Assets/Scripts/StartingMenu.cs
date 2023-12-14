@@ -2,40 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class StartingMenu : MonoBehaviour
 {
+    public AudioManager AudioManager;
     public GameObject OptionsPanel;
     public GameObject MainMenuPanel;
     // MAIN MENU
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("UpgradeScreen");
     }
     public void OptionsButton()
     {
         MainMenuPanel.SetActive(false);
         OptionsPanel.SetActive(true);
     }
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScreen");
+    }
     public void QuitGame()
     {
         Application.Quit();
     }
     // OPTIONS MENU
-    public AudioMixer GameAudioMixer;
 
     public void ReturnButton()
     {
         OptionsPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
     }
-    public void ToggleFullscreen()
+    public void AcceptButton()
     {
-        Screen.fullScreen = !Screen.fullScreen;
-    }
-    public void SetVolume(float volume)
-    {
-        GameAudioMixer.SetFloat("GameVolume", volume);
+        if(AudioManager != null)
+        {
+            AudioManager.SaveAudioSettings();
+        }
+        ReturnButton();
     }
 }
