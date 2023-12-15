@@ -82,7 +82,7 @@ public class PlaneControlV2 : MonoBehaviour
 
         if(transform.position.y > maxAltitude)
         {
-            targetPitch = -0.5f;
+            targetPitch = -1.0f;
         }
 
         // Rotate the cube by converting the angles into a quaternion.

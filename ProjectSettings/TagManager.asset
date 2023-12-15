@@ -34,6 +34,8 @@ TagManager:
   - EagleWing1
   - EagleWing2
   - Ground
+  - WarningCanvas
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
