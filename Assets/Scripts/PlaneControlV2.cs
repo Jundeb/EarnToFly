@@ -15,6 +15,7 @@ public class PlaneControlV2 : MonoBehaviour
     private float targetPitch;
 
     Rigidbody rb;
+
     private StatManager statManager;
     private CameraMovement cameraMovement;
     private PlayerInputButton throttleButton;
@@ -32,7 +33,10 @@ public class PlaneControlV2 : MonoBehaviour
         throttleButton = GameObject.FindWithTag("ThrottleButton").GetComponent<PlayerInputButton>();
         pitchControlUpButton = GameObject.FindWithTag("UpButton").GetComponent<PlayerInputButton>();
         pitchControlDownButton = GameObject.FindWithTag("DownButton").GetComponent<PlayerInputButton>();
+
     }
+
+
 
     private void HandleInputs()
     {
@@ -54,10 +58,12 @@ public class PlaneControlV2 : MonoBehaviour
         if (throttleButton.ButtonState() || Input.GetKey(KeyCode.Space))
         {
             flySpeed += statManager.accelerationMultiplier;
+
         }
         else if (!throttleButton.ButtonState())
         {
             flySpeed -= 1;
+
         }
 
         flySpeed = Mathf.Clamp(flySpeed, minSpeed, maxSpeed);
@@ -67,7 +73,6 @@ public class PlaneControlV2 : MonoBehaviour
     void Update()
     {
         HandleInputs();
-
         propella.Rotate(Vector3.fwd * flySpeed * 5);
     }
 
