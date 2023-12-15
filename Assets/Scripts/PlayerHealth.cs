@@ -34,7 +34,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        planeSounds.PlayHitSound();
         currentHealth -= amount;
         if (currentHealth <= 0)
         {

@@ -36,11 +36,4 @@ public class PlaneSounds : MonoBehaviour
             soundFxPitch = Mathf.Lerp(soundFxPitch, 1.0f, Time.deltaTime * 0.5f);
         }
     }
-
-    internal void PlayHitSound()
-    {
-        // hitAudioSource.Play();
-        Debug.Log("HitSound");
-    }
-
 }

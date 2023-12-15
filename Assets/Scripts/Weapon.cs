@@ -55,6 +55,7 @@ public class Weapon : MonoBehaviour
         ShootButton = GameObject.FindWithTag("ShootButton").GetComponent<PlayerInputButton>();
         statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         ammoText = GameObject.FindWithTag("AmmoAmount").GetComponent<Text>();
+        weaponSounds = GameObject.FindWithTag("Weapon").GetComponent<WeaponSounds>();
         ammo_max = statManager.maxAmmoMultiplier;
         ammo_amount = ammo_max;
         fire_rate = 1.5f - statManager.fireRateMultiplier;

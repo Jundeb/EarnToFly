@@ -5,42 +5,38 @@ using UnityEngine;
 public class EnemySounds : MonoBehaviour
 {
     public AudioClip birdSound;
-    private AudioSource birdAudioSource;
     public AudioClip eagleSound;
-    private AudioSource eagleAudioSource;
     public AudioClip hotAirBalloonSound;
+
+    private AudioSource birdAudioSource;
+    private AudioSource eagleAudioSource;
     private AudioSource hotAirBalloonAudioSource;
 
     private void Awake()
     {
-        birdAudioSource = GetComponent<AudioSource>();
-        eagleAudioSource = GetComponent<AudioSource>();
-        hotAirBalloonAudioSource = GetComponent<AudioSource>();
-    }
+        // Create a new AudioSource for each sound
+        birdAudioSource = gameObject.AddComponent<AudioSource>();
+        eagleAudioSource = gameObject.AddComponent<AudioSource>();
+        hotAirBalloonAudioSource = gameObject.AddComponent<AudioSource>();
 
-    private void Start()
-    {
+        // Set the clip of each AudioSource
         birdAudioSource.clip = birdSound;
         eagleAudioSource.clip = eagleSound;
         hotAirBalloonAudioSource.clip = hotAirBalloonSound;
-
     }
 
     internal void PlayBirdSound()
     {
-        Debug.Log("ChirpSound");
         birdAudioSource.Play();
     }
 
     internal void PlayEagleSound()
     {
-        Debug.Log("EagleSound");
         eagleAudioSource.Play();
     }
 
     internal void PlayHotAirBalloonSound()
     {
-        Debug.Log("HotAirBalloonSound");
         hotAirBalloonAudioSource.Play();
     }
 }

@@ -1729,7 +1729,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 7f28ada9f7fb5024d8d12266bcfdc893, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7526,11 +7526,9 @@ SceneRoots:
   - {fileID: 290387214}
   - {fileID: 481257611}
   - {fileID: 5220845473811209949}
-  - {fileID: 38414006125984730}
   - {fileID: 314086058}
   - {fileID: 595484090}
-  - {fileID: 1024167358}
   - {fileID: 90575846}
   - {fileID: 1260743768}
   - {fileID: 475773045}
-
+  - {fileID: 1886105417}
