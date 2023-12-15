@@ -33,6 +33,7 @@ TagManager:
   - AmmoAmount
   - EagleWing1
   - EagleWing2
+  - Ground
   layers:
   - Default
   - TransparentFX
