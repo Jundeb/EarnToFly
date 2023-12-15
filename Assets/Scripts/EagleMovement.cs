@@ -12,8 +12,8 @@ public class EagleMovement : MonoBehaviour
     void Start()
     {
         eagle = GetComponent<Transform>();
-        wing1 = GameObject.FindWithTag("EagleWing1").GetComponent<Transform>();
-        wing2 = GameObject.FindWithTag("EagleWing2").GetComponent<Transform>();
+        wing1 = GameObject.FindGameObjectWithTag("EagleWing1").GetComponent<Transform>();
+        wing2 = GameObject.FindGameObjectWithTag("EagleWing2").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -28,6 +28,9 @@ public class EagleMovement : MonoBehaviour
 
     private void FixedUpdate() {
         //move the eagle forward
+        if (eagle != null)
+        {
         eagle.Translate(Vector3.left * Time.deltaTime * 5f);
+        }
     }
 }
