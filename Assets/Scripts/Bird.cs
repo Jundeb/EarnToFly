@@ -99,14 +99,14 @@ public class Bird : Enemy
         if (IsThisABird)
         {
             health = 1;
-            loot = 10;
+            loot = 8;
             contactDamage = 10;
             movementSpeed = 3;
         }
         else
         {
             health = 1;
-            loot = 20;
+            loot = 15;
             contactDamage = 20;
             movementSpeed = 5;
         }
