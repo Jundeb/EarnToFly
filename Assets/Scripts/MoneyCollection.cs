@@ -60,14 +60,14 @@ public class MoneyCollection : MonoBehaviour
 
             int distanceTravelledInt = (int)distanceTravelled;
 
-            if (distanceTravelledInt % 5 == 0 && !hasIncremented)
+            if (distanceTravelledInt % 8 == 0 && !hasIncremented)
             {
                 moneyCollected += (int)Math.Round(statManager.moneyMultiplier, MidpointRounding.AwayFromZero);
                 statManager.moneyCollected = moneyCollected;
                 hasIncremented = true;
             }
 
-            else if (distanceTravelledInt % 5 != 0)
+            else if (distanceTravelledInt % 8 != 0)
             {
                 hasIncremented = false;
             }
