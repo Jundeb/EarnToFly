@@ -7,7 +7,7 @@ public class EagleMovement : MonoBehaviour
     private Transform eagle;
     private Transform wing1;
     private Transform wing2;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +19,34 @@ public class EagleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (eagle != null) {
-        wing1.Rotate(Mathf.Sin(Time.time * 4) * 5f, 0, 0);
-        wing2.Rotate(Mathf.Sin(Time.time * 4) * -5f, 0, 0);
-        }
+        if (eagle != null)
+        {
+            if (wing1 != null)
+            {
+                wing1.RotateAround(wing1.position, wing1.right, Mathf.Sin(Time.time * 4) * 2f);
+            }
+            else
+            {
+                Debug.LogError("Wing1 is null");
+            }
 
+            if (wing2 != null)
+            {
+                wing2.RotateAround(wing2.position, wing2.right, Mathf.Sin(Time.time * 4) * -2f);
+            }
+            else
+            {
+                Debug.LogError("Wing2 is null");
+            }
+        }
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         //move the eagle forward
         if (eagle != null)
         {
-        eagle.Translate(Vector3.left * Time.deltaTime * 5f);
+            eagle.Translate(Vector3.left * Time.deltaTime * 5f);
         }
     }
 }
