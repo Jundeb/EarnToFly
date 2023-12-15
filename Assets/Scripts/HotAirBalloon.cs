@@ -14,6 +14,9 @@ public class HotAirBalloon : Enemy
 
     private Weapon weapon;
     public LaunchProjectile launchProjectile;
+    private EnemySounds enemySounds;
+    public Color color1 = Color.blue;
+    public Color color2 = Color.red;
 
     [Header("Hot Air Balloon V1")]
     [Tooltip("Moves up/down")]
@@ -40,7 +43,7 @@ public class HotAirBalloon : Enemy
 
     public override void Die()
     {
-        // play death animation
+        enemySounds.PlayHotAirBalloonSound();
 
     }
 
@@ -98,8 +101,8 @@ public class HotAirBalloon : Enemy
         plane = GameObject.FindGameObjectWithTag("Player");
         moneyCollection = plane.GetComponent<MoneyCollection>();
         playerHealth = plane.GetComponent<PlayerHealth>();
-
         weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
+        enemySounds = GameObject.FindWithTag("SoundManager").GetComponent<EnemySounds>();
     }
 
     public void Start()

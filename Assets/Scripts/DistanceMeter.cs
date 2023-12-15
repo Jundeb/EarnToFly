@@ -10,11 +10,6 @@ public class DistanceMeter : MonoBehaviour
     internal float totalDistance = 0.0f;
     private Text distanceText; // Reference to the Text component
 
-    private void Awake()
-    {
-        distanceText = GameObject.FindWithTag("DistanceMeter").GetComponent<Text>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +23,5 @@ public class DistanceMeter : MonoBehaviour
         totalDistance += distance;
         lastXPosition = transform.position.x;
 
-        // Set the text of the Text component to the total distance rounded off to two decimal places
-        distanceText.text = "Distance: " + Math.Round(totalDistance, 0).ToString() + " units";
     }
 }
