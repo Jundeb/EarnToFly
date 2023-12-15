@@ -19,9 +19,11 @@ public class EagleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //roate the eagle wing up and down to simulate flying
+        if (eagle != null) {
         wing1.Rotate(Mathf.Sin(Time.time * 4) * 5f, 0, 0);
         wing2.Rotate(Mathf.Sin(Time.time * 4) * -5f, 0, 0);
+        }
+
     }
 
     private void FixedUpdate() {
