@@ -14,7 +14,7 @@ public class WeaponSounds : MonoBehaviour
 
     internal void PlayShootSound()
     {
-        // shootAudioSource.Play();
+        shootAudioSource.Play();
         Debug.Log("ShootSound");
     }
 }

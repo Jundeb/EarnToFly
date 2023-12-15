@@ -12,6 +12,7 @@ public class Bird : Enemy
     private PlayerHealth playerHealth;
     private PlaneControlV2 planeControlV2;
     private StatManager statManager;
+    private EnemySounds enemySounds;
     private Weapon weapon;
     public Color color1 = Color.blue;
     public Color color2 = Color.red;
@@ -29,7 +30,14 @@ public class Bird : Enemy
     }
     public override void Die()
     {
-        // play death animation
+        if (IsThisABird)
+        {
+            enemySounds.PlayBirdSound();
+        }
+        else
+        {
+            enemySounds.PlayEagleSound();
+        }
 
     }
 
@@ -98,6 +106,7 @@ public class Bird : Enemy
         planeControlV2 = plane.GetComponent<PlaneControlV2>();
         statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
         weapon = GameObject.FindWithTag("Weapon").GetComponent<Weapon>();
+        enemySounds = GameObject.FindWithTag("SoundManager").GetComponent<EnemySounds>();
     }
 
     public void Start()

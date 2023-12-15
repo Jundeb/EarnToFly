@@ -8,8 +8,6 @@ public class PlaneSounds : MonoBehaviour
     public float soundFxPitch;
     public AudioClip engineSound;
     private AudioSource engineAudioSource;
-    public AudioClip hitSound;
-    private AudioSource hitAudioSource;
     private PlaneControlV2 planeControlV2;
     private void Awake()
     {
