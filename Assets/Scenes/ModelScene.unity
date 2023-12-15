@@ -2733,6 +2733,7 @@ GameObject:
   - component: {fileID: 746102894}
   - component: {fileID: 746102896}
   - component: {fileID: 746102895}
+  - component: {fileID: 746102897}
   m_Layer: 0
   m_Name: Terrain_0_0_99919e69-9779-44cc-a7bc-9c9cfeb1d108
   m_TagString: Untagged
@@ -2814,6 +2815,23 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!114 &746102897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746102893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af18f1169baba224aa91a04326cc8c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  spawnLocation: 0
+  movementSpeed: 0
+  contactDamage: 0
+  loot: 0
 --- !u!1 &752059133
 GameObject:
   m_ObjectHideFlags: 0
