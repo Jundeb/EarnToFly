@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 2624324598411399677}
   m_Layer: 0
   m_Name: HotAirBalloonV2
-  m_TagString: Untagged
+  m_TagString: HotAirBalloonV2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
