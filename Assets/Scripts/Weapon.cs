@@ -39,6 +39,8 @@ public class Weapon : MonoBehaviour
     private Vector3 ProjectilesForce;
     private float RandomAccuracy;
     private int currentProjectileIndex = 0;
+
+    private Text ammoText; // Reference to the Text component
     private Vector3[] projectileScales = {
         new Vector3(30f, 30f, 30f),
         new Vector3(1.0f, 1.0f, 1.0f),
@@ -52,7 +54,7 @@ public class Weapon : MonoBehaviour
         ProjectilesSpawn = GameObject.FindWithTag("ProjectileSpawn").GetComponent<Transform>();
         ShootButton = GameObject.FindWithTag("ShootButton").GetComponent<PlayerInputButton>();
         statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
-        weaponSounds = GameObject.FindWithTag("Weapon").GetComponent<WeaponSounds>();
+        ammoText = GameObject.FindWithTag("AmmoAmount").GetComponent<Text>();
         ammo_max = statManager.maxAmmoMultiplier;
         ammo_amount = ammo_max;
         fire_rate = 1.5f - statManager.fireRateMultiplier;
@@ -94,6 +96,10 @@ public class Weapon : MonoBehaviour
         
         // print(Time.time);
     }
+
+    void Update(){
+        ammoText.text = ammo_amount.ToString() + "/" + ammo_max.ToString();
+    }
     void ChangeProjectile(int newIndex)
     {
         if (newIndex >= 0 && newIndex < ProjectilesInUse.Length)
@@ -129,5 +135,9 @@ public class Weapon : MonoBehaviour
         }
         //sets the projectile to move
         projectileRigidBody.AddRelativeForce(ProjectilesForce);
+    }
+
+    public int GetAmmo(){
+        return ammo_amount;
     }
 }

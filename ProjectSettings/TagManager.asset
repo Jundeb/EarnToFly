@@ -30,6 +30,8 @@ TagManager:
   - HotAirBalloonV2
   - HotAirBalloonV3
   - SoundManager
+  - AmmoAmount
+
   layers:
   - Default
   - TransparentFX
