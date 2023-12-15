@@ -30,6 +30,8 @@ TagManager:
   - HotAirBalloonV2
   - HotAirBalloonV3
   - AmmoAmount
+  - EagleWing1
+  - EagleWing2
   layers:
   - Default
   - TransparentFX

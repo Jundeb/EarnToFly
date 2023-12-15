@@ -13,8 +13,6 @@ public class Bird : Enemy
     private PlaneControlV2 planeControlV2;
     private StatManager statManager;
     private Weapon weapon;
-    public Color color1 = Color.blue;
-    public Color color2 = Color.red;
     public bool IsThisABird;
     public override void TakeDamage(float amount)
     
@@ -77,19 +75,6 @@ public class Bird : Enemy
         }
     }
 
-    public override void SetColor(Color color)
-    {
-        Renderer renderer = GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.material.color = color;
-        }
-        else
-        {
-            Debug.LogError("Renderer component not found");
-        }
-    }
-
     private void Awake()
     {
         plane = GameObject.FindWithTag("Player");
@@ -111,7 +96,6 @@ public class Bird : Enemy
         }
         else
         {
-            SetColor(color2);
             health = 1;
             loot = 20;
             contactDamage = 20;

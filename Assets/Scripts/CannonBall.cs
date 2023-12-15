@@ -37,11 +37,6 @@ public class CannonBall : Enemy
         }
     }
 
-    public override void SetColor(Color color)
-    {
-
-    }
-
     public override void Attack()
     {
 

@@ -14,8 +14,6 @@ public class HotAirBalloon : Enemy
 
     private Weapon weapon;
     public LaunchProjectile launchProjectile;
-    public Color color1 = Color.blue;
-    public Color color2 = Color.red;
 
     [Header("Hot Air Balloon V1")]
     [Tooltip("Moves up/down")]
@@ -75,19 +73,6 @@ public class HotAirBalloon : Enemy
         }
     }
 
-    public override void SetColor(Color color)
-    {
-        Renderer renderer = GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.material.color = color;
-        }
-        else
-        {
-            Debug.LogError("Renderer component not found");
-        }
-    }
-
     IEnumerator Move()
     {
         while (true)
@@ -121,7 +106,6 @@ public class HotAirBalloon : Enemy
     {
         if (IsThisAHotAirBalloonV1)
         {
-            SetColor(color1);
             health = 1;
             loot = 10;
             contactDamage = 10;
@@ -130,7 +114,6 @@ public class HotAirBalloon : Enemy
         }
         else if (IsThisAHotAirBalloonV2)
         {
-            SetColor(color2);
             health = 1;
             loot = 20;
             contactDamage = 20;
@@ -141,7 +124,6 @@ public class HotAirBalloon : Enemy
         }
         else if (IsThisAHotAirBalloonV3)
         {
-            SetColor(color2);
             health = 1;
             loot = 20;
             contactDamage = 20;
