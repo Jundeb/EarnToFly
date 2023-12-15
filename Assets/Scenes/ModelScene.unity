@@ -1987,7 +1987,7 @@ MonoBehaviour:
   minSpeed: 20
   maxSpeed: 40
   flySpeedIncrement: 1
-  maxAltitude: 2500
+  maxAltitude: 500
   rotationSmoothing: 1
   correctionSpeed: 1
   propella: {fileID: 534432287}

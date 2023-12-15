@@ -7,7 +7,7 @@ public class PlaneControlV2 : MonoBehaviour
     public float minSpeed = 20f;
     public float maxSpeed = 70f;
     public float flySpeedIncrement;
-    public float maxAltitude = 2500f;
+    public float maxAltitude = 500f;
 
     public float rotationSmoothing = 1.0f;
     public float correctionSpeed = 1.0f;

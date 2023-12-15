@@ -176,7 +176,7 @@ MonoBehaviour:
   minSpeed: 20
   maxSpeed: 40
   flySpeedIncrement: 0.1
-  maxAltitude: 2000
+  maxAltitude: 500
   rotationSmoothing: 1
   correctionSpeed: 1
   propella: {fileID: 6208949870645395084}
@@ -217,10 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba13b1f4e5d118c4385f149ee6c461ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  currentHealth: 0
   maxHealth: 100
-  healthText: {fileID: 1122728956377758807, guid: 1c1c9110ca37f4245ae6044d97476a48,
-    type: 3}
+  mask: {fileID: 0}
 --- !u!23 &5112327480056131193
 MeshRenderer:
   m_ObjectHideFlags: 0
