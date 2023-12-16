@@ -35,6 +35,15 @@ A powerful, open-source 3D computer graphics software for creating animated film
 
 ## Pictures of game and models
 <img src="./Pictures/Game.png" alt="Game" width="100%" />
-<img src="./Pictures/HAB.png" alt="Game" width="33%" />
-<img src="./Pictures/Eagle.png" alt="Game" width="33%" />
-<img src="./Pictures/Plane.png" alt="Game" width="33%" />
+<div class="row">
+  <div class="column">
+    <img src="./Pictures/HAB.png" alt="HotAirBalloon" width="100%">
+  </div>
+  <div class="column">
+    <img src="./Pictures/Eagle.png" alt="Eagle" width="100%">
+  </div>
+  <div class="column">
+    <img src="./Pictures/Plane.png" alt="Plane" width="100%">
+  </div>
+</div>
+
