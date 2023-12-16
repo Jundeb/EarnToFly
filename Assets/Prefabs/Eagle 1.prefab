@@ -95,9 +95,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2288852073367070518}
-  - component: {fileID: 691244708209409622}
   - component: {fileID: 6952281383767891484}
   - component: {fileID: 5039782797353591590}
+  - component: {fileID: 4943502730878392981}
   m_Layer: 0
   m_Name: Eagle 1
   m_TagString: Eagle
@@ -123,18 +123,6 @@ Transform:
   - {fileID: 6982711573598012030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &691244708209409622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479558345412427148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53d5749e749017448610ebefdf46c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6952281383767891484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +162,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.279046, y: 2.087963, z: 1.75386}
   m_Center: {x: -0.11682081, y: -0.54398155, z: 0.011109501}
+--- !u!95 &4943502730878392981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479558345412427148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c274200060823434cb1d5ebb5da1ebf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4250508832266878577
 GameObject:
   m_ObjectHideFlags: 0
