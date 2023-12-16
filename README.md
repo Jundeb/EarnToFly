@@ -35,16 +35,8 @@ A powerful, open-source 3D computer graphics software for creating animated film
 
 ## Pictures of game and models
 <img src="./Pictures/Game.png" alt="Game" width="100%" />
-<div style="display: flex;">
-  <div style="flex: 33.33%; padding: 5px;">
-    <img src="./Pictures/HAB.png" alt="HotAirBalloon" style="width: 100%;">
-  </div>
-  <div style="flex: 33.33%; padding: 5px;">
-    <img src="./Pictures/Eagle.png" alt="Eagle" style="width: 100%;">
-  </div>
-  <div style="flex: 33.33%; padding: 5px;">
-    <img src="./Pictures/Plane.png" alt="Plane" style="width: 100%;">
-  </div>
-</div>
+<img src="./Pictures/Eagle.png" alt="Game" width="100%" />
+<img src="./Pictures/Plane.png" alt="Game" width="100%" />
+<img src="./Pictures/HAB.png" alt="Game" width="100%" />
 
 
