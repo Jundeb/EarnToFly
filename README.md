@@ -1,5 +1,8 @@
 # EarnToFly
 
+# Demo video (in finnish)
+[Demo](https://youtu.be/P-jggPhbhis)
+
 ## Games story
 In the main plot of the game there is two characters that decide to race around the world. The players character is "good" and the NPC is "bad". The bad character hires and buys obstacles and enemies to prevent the player from reaching the goal. Player needs to go trough various different enviroments (representing climates and weathers from different countries) to win the race.
 
