@@ -3,7 +3,39 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - biplane_tag
+  - Eagle
+  - Bird
+  - Projectile
+  - HotAirBalloon
+  - CannonBall
+  - Weapon
+  - DistanceMeter
+  - MoneyMeter
+  - DownButton
+  - UpButton
+  - ThrottleButton
+  - ProjectileSpawn
+  - ShootButton
+  - CannonBallSpawner
+  - BuyHealthButton
+  - StatManager
+  - HealthMultiplierText
+  - BuyMaxAmmoButton
+  - BuyAccelerationButton
+  - BuyMoneyButton
+  - BuyFireRateButton
+  - HotAirBalloonV1
+  - HotAirBalloonV2
+  - HotAirBalloonV3
+  - SoundManager
+  - AmmoAmount
+  - EagleWing1
+  - EagleWing2
+  - Ground
+  - WarningCanvas
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
