@@ -34,4 +34,4 @@ A powerful, open-source 3D computer graphics software for creating animated film
 - Upgrade Scene background and shapes
 
 ## Pictures of game and models
-//<img src="Game.png" alt="Game" width="200" />
+//<img src="./Pictures/Game.png" alt="Game" width="200" />
