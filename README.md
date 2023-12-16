@@ -32,3 +32,6 @@ A powerful, open-source 3D computer graphics software for creating animated film
 - Start, Options, and Credits scene design
 - Sound effect settings
 - Upgrade Scene background and shapes
+
+## Pictures of game and models
+//<img src="drawing.jpg" alt="drawing" width="200" />
