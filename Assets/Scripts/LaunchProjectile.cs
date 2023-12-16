@@ -8,7 +8,6 @@ public class LaunchProjectile : MonoBehaviour
 {
     public GameObject projectile;
     public float launchVelocity = 700f;
-
     public float cooldownDuration = 0.5f;
 
     public void StartDroppinCannonBalls()
@@ -25,6 +24,7 @@ public class LaunchProjectile : MonoBehaviour
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
 
         ballRigidbody.AddRelativeForce(new Vector3(0, -launchVelocity, 0));
+        Destroy(ball, 3f);
     }
 }
  
