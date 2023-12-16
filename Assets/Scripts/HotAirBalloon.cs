@@ -28,7 +28,6 @@ public class HotAirBalloon : Enemy
     public bool IsThisAHotAirBalloonV3;
 
     public float movementDuration = 5f;
-    private float cannonBallDamage = 2f;
     public override void TakeDamage(float amount)
     {
         health -= amount;
