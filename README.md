@@ -14,10 +14,18 @@ A powerful, open-source 3D computer graphics software for creating animated film
 
 ## What everyone did
 ### Junnu [Junnu's GitHub](https://github.com/Jundeb)
-Todo
+- Basic aircraft control and acceleration
+- Design of game background and shapes, UI elements, models, and animations (except bird and trees)
 
 ### Anssi [Anssi's GitHub](https://github.com/luris123)
-Todo
-
+- Upgrade system implementation
+- Save system integration
+- Enemy class inheritance and spawner
+- Eemy spawner functionality
+- Game sound effects
+  
 ### Antti-Jussi [A-J's GitHub](https://github.com/ArunJ0)
-Todo
+- Aircraft weaponry implementation
+- Start, Options, and Credits scene design
+- Sound effect settings
+- Upgrade Scene background and shapes
