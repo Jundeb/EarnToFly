@@ -110,7 +110,7 @@ public class HotAirBalloon : Enemy
         {
             health = 1;
             loot = 10;
-            contactDamage = 10;
+            contactDamage = 50;
             //start moving up/down
             StartCoroutine(Move());
         }
@@ -118,7 +118,7 @@ public class HotAirBalloon : Enemy
         {
             health = 1;
             loot = 20;
-            contactDamage = 20;
+            contactDamage = 50;
             movementSpeed = 5;
 
             //start dropping cannonballs
@@ -128,7 +128,7 @@ public class HotAirBalloon : Enemy
         {
             health = 1;
             loot = 20;
-            contactDamage = 20;
+            contactDamage = 50;
             movementSpeed = 5;
             //start dropping cannonballs
             launchProjectile.StartDroppinCannonBalls();
