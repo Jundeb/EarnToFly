@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     private StatManager statManager;
-    private PlaneSounds planeSounds;
     public float currentHealth;
-    public float maxHealth = 100;
-
+    public float maxHealth;
     public Image mask;
     void Start()
     {
+        maxHealth = 100f;
         if(StatManager.Instance != null)
         {
             maxHealth = StatManager.Instance.healthMultiplier * maxHealth;
@@ -24,7 +23,6 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         statManager = GameObject.FindWithTag("StatManager").GetComponent<StatManager>();
-        planeSounds = GameObject.FindWithTag("Player").GetComponent<PlaneSounds>();
     }
 
     void Update()
